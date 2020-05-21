@@ -1,0 +1,21 @@
+<%= render 'util/toast' %>
+<div class='container'>
+
+  <div id="single–post" data-channel="posts" data-post-id="<%= @post.id %>">
+    <p>
+      <h2> <%= @post.user.email %> 's post </h2>
+      <% if @show_delete %>
+        <span><%= link_to "Delete", post_path, :method => :delete %></span>
+      <% end %>
+    </p>
+    <hr>
+    <em>Title:&nbsp<%= @post.title %> </br></br>
+        Description:&nbsp;<%= @post.content %> 
+    </h3>
+  </div>
+  <section id="comments" data-channel="comments" >
+    <%= render 'comments/comments', post: @message %>
+  </section>
+  <%= render 'comments/new', post: @post %>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="container space-above">
+      <%= form_for [post, Comment.new] do |f| %>
+            <p>
+                  <%= f.text_area :content, placeholder: "Commenting as #{current_user.email}", class: 'md-textarea form-control', rows:"2" %>
+                  <%= f.hidden_field :post_id, :value => @post.id %>
+            </p>
+            </div>
+            <p>
+                  <%= f.submit 'Save',  class:"btn btn-primary"%>
+            </p>
+      <% end %>
+
+</div>
+
+<style type="text/css">
+      .space_above{
+            padding-top: 40px;
+      }
+</style>
+
+

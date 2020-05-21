@@ -1,0 +1,43 @@
+<%= render 'util/toast' %>
+<div class='container'>
+  <div>
+    <h1>Posts</h1>
+    <h2 class='right-align'><%= link_to 'Create Post', new_post_path %>  </h2>
+  </div>
+  <section>
+    <ul class="list-unstyled">
+      <% @posts.each do |post| %>
+        <li class=".list-group-item">
+          <%= link_to post.content, post %>  
+        </li>
+        <hr>
+      <% end %>
+    </ul>
+  </section>
+</div>
+
+
+
+<style type="text/css">  
+  ul.list-group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.list-group-item {
+    float: left;
+    margin: 0px;
+    padding: 3% 0px;
+}
+
+a {
+  display: block;
+  padding: 20px;
+  text-decoration: none !important;
+  font-size: 20px;
+  /*border: 1px solid;*/
+}
+
+
+</style>  

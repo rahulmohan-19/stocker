@@ -1,0 +1,32 @@
+<div class='container'>
+  <h4>Comments</h4>
+
+  <ul>
+    <% @post.comments.includes(:user).each do |comment| %>
+      <li>
+        <p>
+        <%= comment.user.email %>
+        <span><small>&nbsp;says:&nbsp;</small> <%= comment.content %> </span>
+        <% if current_user.email == comment.user.email %>
+          <span><%= link_to "Delete", post_comment_path(@post, comment), :method => :delete %></span>
+        <% end %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<style type="text/css">  
+  ul.list-group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.list-group-item {
+    float: left;
+    margin: 0px;
+    padding: 3% 0px;
+}
+</style>  

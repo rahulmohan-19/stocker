@@ -1,0 +1,18 @@
+<%= render 'util/toast' %>
+<div class="container new_post">
+  <!-- Content here -->
+<%= form_for @post, :html => {:class => "form-group"} do |f| %>
+      <%= f.text_field :title , class:"form-control bottom-spacing", placeholder: "Stock Recommendation Title" %>
+      <%= f.text_area :content, placeholder: "Description", class: 'md-textarea form-control bottom-spacing', rows:"2" %>
+      <%= f.submit 'Create Post', class:"btn btn-primary" %>
+<% end %>
+</div>
+
+<style type="text/css">
+      .new_post{
+            margin: 5%;
+      }
+      .bottom-spacing {
+                  margin-bottom: 3%;
+      }
+</style>
